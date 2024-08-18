@@ -25,12 +25,12 @@ cd order-process-api
 ```bash
 docker-compose up --build
 ```
-- only run service
+- Only run service env
 
 ```bash
 docker-compose up app
 ```
-- only run test
+- Only run test env
 ```bash
 docker-compose up test
 ```
