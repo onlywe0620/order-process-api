@@ -1,0 +1,24 @@
+version: "1.0"
+
+services:
+  app:
+    image: order-api-services
+    container_name: services
+    build: .
+    ports:
+      - "8080:5000"
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - ./app:/app
+
+  test:
+    image: order-api-test
+    container_name: test
+    build: .
+    environment:
+      - FLASK_ENV=testing
+    command: pytest --disable-warnings /tests
+    volumes:
+      - ./app:/app
+      - ./tests:/tests
